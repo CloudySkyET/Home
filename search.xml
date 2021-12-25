@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>root</title>
+    <title>垃圾箱</title>
     <url>/MaximWall/MaximWall/</url>
-    <content><![CDATA[<p>既然选择了远方，便只顾风雨兼程<br>人只有生活在垃圾堆里，才会努力往上爬，证明自己不是垃圾。<br>高潮退去之后，海岸上留下的，只有残骸。</p>
+    <content><![CDATA[<p>既然选择了远方，便只顾风雨兼程<br>人只有生活在垃圾堆里，才会努力往上爬，证明自己不是垃圾。<br>不要让自己松懈，高潮退去之后，海岸上留下的，只有残骸。</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>About</title>
+    <url>/MaximWall/About/index.html</url>
+    <content><![CDATA[<h1 id="关于我："><a href="#关于我：" class="headerlink" title="关于我："></a>关于我：</h1><p>永远的空想家。。。</p>
+<p>一个河北高一 OIer。虽说从初一就开始学 OI 了，但真正感觉自己在为之努力的奋斗生涯是从高一暑假开始的。</p>
+<p>洛谷号：<a href="https://www.luogu.com.cn/user/304572#?">_CloudySky_</a></p>
+<p>CF（菜死了）：<a href="https://codeforces.com/profile/_CloudySky_">_CloudySky_</a></p>
+<p>偶像名叫 <a href="https://www.luogu.com.cn/user/58705">cmd</a></p>
+<h1 id="关于这个博客："><a href="#关于这个博客：" class="headerlink" title="关于这个博客："></a>关于这个博客：</h1><p>里面的大部分内容还是写给自己的，不过也希望对你能有帮助。</p>
+<p>有一些是现学现写的，有些急于求成；也有一些是复习时写的，咕了好久忘差不多了…</p>
+<p>里面多少会有一些从其他博客里取过来的经，但最终目的是为了自己掌握。</p>
+<p>学习笔记一般格式为：</p>
+<p>简介 + 具体实现 + 代码实现</p>
+<p>题解一般格式为：</p>
+<p>题目大意 + 题目正解 + 题目思路 + 复杂度 + 代码</p>
+<p>引用班主任的一段话：<br><img src="/MaximWall/imgs/backgrounds/xct.png"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>tags</title>
+    <url>/MaximWall/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>categories</title>
+    <url>/MaximWall/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
