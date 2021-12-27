@@ -2,8 +2,12 @@
 <search>
   <entry>
     <title>垃圾箱</title>
-    <url>/MaximWall/MaximWall/</url>
-    <content><![CDATA[<p>长风破浪会有时，直挂云帆济沧海。<br>纵使世界万般残酷，总有温暖值得守护。<br>永远相信美好的事情即将发生。<br>人只有生活在垃圾堆里，才会努力往上爬，证明自己不是垃圾。<br>既然选择了远方，便只顾风雨兼程。</p>
+    <url>/MaximWall/MaximWall/index.html</url>
+    <content><![CDATA[<p>长风破浪会有时，直挂云帆济沧海。</p>
+<p>纵使世界万般残酷，总有温暖值得守护。</p>
+<p>永远相信美好的事情即将发生。</p>
+<p>人只有生活在垃圾堆里，才会努力往上爬，证明自己不是垃圾。</p>
+<p>既然选择了远方，便只顾风雨兼程。</p>
 ]]></content>
   </entry>
   <entry>
@@ -25,6 +29,223 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Friends</title>
+    <url>/MaximWall/friends/index.html</url>
+    <content><![CDATA[<div class="friend-box">
+  <a href="https://blog.baoshuo.ren/" target="_blank" rel="noopener nofollow">
+    <img class="friend-avatar" src="https://cdn.jsdelivr.net/npm/bsi@0.0.2/favicon/128x128.png">
+  </a>
+  <div class="friend-info">
+    <a class="friend-info-title gt-c-content-color-first" 
+      href="https://blog.baoshuo.ren/" target="_blank" 
+      rel="noopener nofollow">宝硕博客</a>
+    <br>
+    <div class="friend-info-description gt-c-content-color-first">
+      学习越来越菜。
+    </div>
+  </div>
+</div>
+
+<div class="friend-box">
+  <a href="https://lawrencesivan.github.io/" target="_blank" rel="noopener nofollow">
+    <img class="friend-avatar" src="https://lawrencesivan.github.io/images/avatar.jpg">
+  </a>
+  <div class="friend-info">
+    <a class="friend-info-title gt-c-content-color-first" 
+      href="https://lawrencesivan.github.io/" target="_blank" 
+      rel="noopener nofollow">LawrenceSivan</a>
+    <br>
+    <div class="friend-info-description gt-c-content-color-first">
+      I was so much older then, I'm younger than that now.
+    </div>
+  </div>
+</div>
+
+<div class="friend-box">
+  <a href="https://cgheavenhealer.github.io/" target="_blank" rel="noopener nofollow">
+    <img class="friend-avatar" src="https://cgheavenhealer.github.io/images/avatar.jpg">
+  </a>
+  <div class="friend-info">
+    <a class="friend-info-title gt-c-content-color-first" 
+      href="https://cgheavenhealer.github.io/" target="_blank" 
+      rel="noopener nofollow">CG_heavenhealer</a>
+    <br>
+    <div class="friend-info-description gt-c-content-color-first">
+      Fantastic Blog
+    </div>
+  </div>
+</div>
+
+<div class="friend-box">
+  <a href="https://rsdbkhusky.github.io/" target="_blank" rel="noopener nofollow">
+    <img class="friend-avatar" src="https://figurebed-1306986731.file.myqcloud.com/blog/img/self/%E5%A4%B4%E5%83%8F.png">
+  </a>
+  <div class="friend-info">
+    <a class="friend-info-title gt-c-content-color-first" 
+      href="https://rsdbkhusky.github.io/" target="_blank" 
+      rel="noopener nofollow">rsdbk_husky’s blog</a>
+    <br>
+    <div class="friend-info-description gt-c-content-color-first">
+      Life is a game, and the game is life
+    </div>
+  </div>
+</div>
+
+<div class="friend-box">
+  <a href="https://youwike.github.io/" target="_blank" rel="noopener nofollow">
+    <img class="friend-avatar" src="https://youwike.github.io/img/logo.png">
+  </a>
+  <div class="friend-info">
+    <a class="friend-info-title gt-c-content-color-first" 
+      href="https://youwike.github.io/" target="_blank" 
+      rel="noopener nofollow">youwike</a>
+    <br>
+    <div class="friend-info-description gt-c-content-color-first">
+      学姐好！
+    </div>
+  </div>
+</div>
+
+<div class="friend-box">
+  <a href="https://noobcompiler.github.io/" target="_blank" rel="noopener nofollow">
+    <img class="friend-avatar" src="https://noobcompiler.github.io/images/logo.jpg">
+  </a>
+  <div class="friend-info">
+    <a class="friend-info-title gt-c-content-color-first" 
+      href="https://noobcompiler.github.io/" target="_blank" 
+      rel="noopener nofollow">Noob_Compiler</a>
+    <br>
+    <div class="friend-info-description gt-c-content-color-first">
+      2023 队长好！
+    </div>
+  </div>
+</div>
+
+<div class="friend-box">
+  <a href="https://functioncoder2006.github.io/" target="_blank" rel="noopener nofollow">
+    <img class="friend-avatar" src="https://raw.githubusercontent.com/FunctionCoder2006/functioncoder2006.github.io/main/favicon.ico">
+  </a>
+  <div class="friend-info">
+    <a class="friend-info-title gt-c-content-color-first" 
+      href="https://functioncoder2006.github.io/" target="_blank" 
+      rel="noopener nofollow">JeffZhao</a>
+    <br>
+    <div class="friend-info-description gt-c-content-color-first">
+      大卷王，只会卷。
+    </div>
+  </div>
+</div>
+
+<div class="friend-box">
+  <a href="https://johnsonloy.github.io/" target="_blank" rel="noopener nofollow">
+    <img class="friend-avatar" src="https://johnsonloy.github.io/logo.jpg">
+  </a>
+  <div class="friend-info">
+    <a class="friend-info-title gt-c-content-color-first" 
+      href="https://johnsonloy.github.io/" target="_blank" 
+      rel="noopener nofollow">Johnsonloy</a>
+    <br>
+    <div class="friend-info-description gt-c-content-color-first">
+      凡王之血，必以剑终
+    </div>
+  </div>
+</div>
+
+<div class="friend-box">
+  <a href="https://www.cnblogs.com/Acestar" target="_blank" rel="noopener nofollow">
+    <img class="friend-avatar" src="https://tu.sunpma.com/imgs/2021/04/d7c003b5a9d8e5f0.webp">
+  </a>
+  <div class="friend-info">
+    <a class="friend-info-title gt-c-content-color-first" 
+      href="https://www.cnblogs.com/Acestar" target="_blank" 
+      rel="noopener nofollow">Acestar</a>
+    <br>
+    <div class="friend-info-description gt-c-content-color-first">
+      A drop of tear blurs memories of the past.
+    </div>
+  </div>
+</div>
+
+<div class="friend-box">
+  <a href="https://www.cnblogs.com/xixike/" target="_blank" rel="noopener nofollow">
+    <img class="friend-avatar" src="https://z3.ax1x.com/2021/10/14/51Nswn.jpg">
+  </a>
+  <div class="friend-info">
+    <a class="friend-info-title gt-c-content-color-first" 
+      href="https://www.cnblogs.com/xixike/" target="_blank" 
+      rel="noopener nofollow">xixike</a>
+    <br>
+    <div class="friend-info-description gt-c-content-color-first">
+      幻梦终醒，本无不散之宴，却不悔付此华年。
+    </div>
+  </div>
+</div>
+<div class="friend-box">
+  <a href="https://sjzezsyxx.github.io/" target="_blank" rel="noopener nofollow">
+    <img class="friend-avatar" src="https://avatars.githubusercontent.com/t/5203352?s=280&v=4">
+  </a>
+  <div class="friend-info">
+    <a class="friend-info-title gt-c-content-color-first" 
+      href="https://sjzezsyxx.github.io/" target="_blank" 
+      rel="noopener nofollow">sjzezsyxx</a>
+    <br>
+    <div class="friend-info-description gt-c-content-color-first">
+      “二南之化，东南之美-格格巫”
+    </div>
+  </div>
+</div>
+
+
+<style>
+.friend-box {
+     float: left;
+     max-width: calc(50% - 20px);
+     min-width: calc(50% - 20px);
+     margin: 15px 10px;
+     background-color: #dcf8ca;
+     padding: 15px;
+     border-radius: 15px;
+}
+ .friend-box .friend-avatar {
+     width: 70px;
+     height: 70px;
+     border-radius: 50% !important;
+     float: left;
+     margin: 0 15px 0 0 !important;
+}
+ .friend-box .friend-info {
+     height: 100px;
+     overflow: hidden;
+     line-height: 24px;
+     padding-left: 30px;
+     font-size: 14px;
+}
+ .friend-box .friend-info a {
+     text-decoration: none !important;
+     font-size: 18px;
+     background: linear-gradient(180deg,transparent 75%,rgba(116,192,252,0.4) 0);
+     margin-bottom: 10px;
+}
+ .friend-box .friend-info .friend-info-description {
+     margin-top: 10px;
+}
+ @media (max-width: 465px) {
+     .friend-box .friend-info .friend-info-description {
+         display: none;
+    }
+}
+ @media (max-width: 993px) {
+     .friend-box {
+         max-width: 90% !important;
+         min-width: 90% !important;
+    }
+}
+</style>
+
+<p><img src="https://cloudyskyet.github.io/Blog/imgs/sjzezsyxx.png"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>tags</title>
     <url>/MaximWall/tags/index.html</url>
     <content><![CDATA[]]></content>
@@ -33,24 +254,5 @@
     <title>categories</title>
     <url>/MaximWall/categories/index.html</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>friends</title>
-    <url>/MaximWall/friends/index.html</url>
-    <content><![CDATA[<p><img src="/Blog/imgs/sjzezsyxx.png"></p>
-<h1 id="临时搬迁（我不想再手糊-Md-友链了呀…"><a href="#临时搬迁（我不想再手糊-Md-友链了呀…" class="headerlink" title="临时搬迁（我不想再手糊 Md 友链了呀…"></a>临时搬迁（我不想再手糊 Md 友链了呀…</h1><ul>
-<li>name: 宝硕博客<br>link: <a href="https://blog.baoshuo.ren/">https://blog.baoshuo.ren/</a><br>logo: <a href="https://cdn.jsdelivr.net/npm/bsi@0.0.2/favicon/128x128.png">https://cdn.jsdelivr.net/npm/bsi@0.0.2/favicon/128x128.png</a><br>description: 学习越来越菜。</li>
-<li>name: LawrenceSivan<br>link: <a href="https://lawrencesivan.github.io/">https://lawrencesivan.github.io/</a><br>logo: <a href="https://lawrencesivan.github.io/images/avatar.jpg">https://lawrencesivan.github.io/images/avatar.jpg</a><br>description: I was so much older then, I’m younger than that now.</li>
-<li>name: CG_heavenhealer<br>link: <a href="https://cgheavenhealer.github.io/">https://cgheavenhealer.github.io/</a><br>logo: <a href="https://cgheavenhealer.github.io/images/avatar.jpg">https://cgheavenhealer.github.io/images/avatar.jpg</a><br>description: Fantastic Blog</li>
-<li>name: rsdbk_husky’s blog<br>link: <a href="https://rsdbkhusky.github.io/">https://rsdbkhusky.github.io/</a><br>logo: <a href="https://figurebed-1306986731.file.myqcloud.com/blog/img/self/%E5%A4%B4%E5%83%8F.png">https://figurebed-1306986731.file.myqcloud.com/blog/img/self/%E5%A4%B4%E5%83%8F.png</a><br>description: Life is a game, and the game is life</li>
-<li>name: youwike<br>link: <a href="https://youwike.github.io/">https://youwike.github.io/</a><br>logo: <a href="https://youwike.github.io/img/logo.png">https://youwike.github.io/img/logo.png</a><br>description: 学姐好！</li>
-<li>name: Noob_Compiler<br>link: <a href="https://noobcompiler.github.io/">https://noobcompiler.github.io/</a><br>logo: <a href="https://noobcompiler.github.io/images/logo.jpg">https://noobcompiler.github.io/images/logo.jpg</a><br>description: 2023 队长好！</li>
-<li>name: JeffZhao<br>link: <a href="https://functioncoder2006.github.io/">https://functioncoder2006.github.io/</a><br>logo: /imgs/JeffZhao.png<br>description: 大卷王，只会卷。</li>
-<li>name: Johnsonloy<br>link: <a href="https://johnsonloy.github.io/">https://johnsonloy.github.io/</a><br>logo: <a href="https://johnsonloy.github.io/logo.jpg">https://johnsonloy.github.io/logo.jpg</a><br>description: 凡王之血，必以剑终</li>
-<li>name: Acestar<br>link: <a href="https://www.cnblogs.com/Acestar">https://www.cnblogs.com/Acestar</a><br>logo: <a href="https://tu.sunpma.com/imgs/2021/04/d7c003b5a9d8e5f0.webp">https://tu.sunpma.com/imgs/2021/04/d7c003b5a9d8e5f0.webp</a><br>description: A drop of tear blurs memories of the past.</li>
-<li>name: xixike<br>link: <a href="https://www.cnblogs.com/xixike/">https://www.cnblogs.com/xixike/</a><br>logo: /imgs/xixike.png<br>description: 幻梦终醒，本无不散之宴，却不悔付此华年。</li>
-<li>name: sjzezsyxx<br>link: <a href="https://sjzezsyxx.github.io/">https://sjzezsyxx.github.io/</a><br>logo: <a href="https://avatars.githubusercontent.com/t/5203352?s=280&amp;v=4">https://avatars.githubusercontent.com/t/5203352?s=280&amp;v=4</a><br>description: “二南之化，东南之美-格格巫”</li>
-</ul>
-]]></content>
   </entry>
 </search>
