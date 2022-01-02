@@ -90,6 +90,36 @@
     </div>
   </div>
 </div>
+<div class="friend-box">
+  <a href="https://www.luogu.com.cn/blog/ac198217/" target="_blank" rel="noopener nofollow">
+    <img class="friend-avatar" src="https://youwike.github.io/img/logo.png">
+  </a>
+  <div class="friend-info">
+    <a class="friend-info-title gt-c-content-color-first" 
+      href="https://www.luogu.com.cn/blog/ac198217/" target="_blank" 
+      rel="noopener nofollow">youwike</a>
+    <br>
+    <div class="friend-info-description gt-c-content-color-first">
+      不一样的学姐
+    </div>
+  </div>
+</div>
+
+<div class="friend-box">
+  <a href="https://www.cnblogs.com/youwike/" target="_blank" rel="noopener nofollow">
+    <img class="friend-avatar" src="https://youwike.github.io/img/logo.png">
+  </a>
+  <div class="friend-info">
+    <a class="friend-info-title gt-c-content-color-first" 
+      href="https://www.cnblogs.com/youwike/" target="_blank" 
+      rel="noopener nofollow">youwike</a>
+    <br>
+    <div class="friend-info-description gt-c-content-color-first">
+      好多学姐啊
+    </div>
+  </div>
+</div>
+
 
 <div class="friend-box">
   <a href="https://noobcompiler.github.io/" target="_blank" rel="noopener nofollow">
@@ -165,6 +195,7 @@
     </div>
   </div>
 </div>
+
 <div class="friend-box">
   <a href="https://sjzezsyxx.github.io/" target="_blank" rel="noopener nofollow">
     <img class="friend-avatar" src="https://avatars.githubusercontent.com/t/5203352?s=280&v=4">
