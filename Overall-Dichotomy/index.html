@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>整体二分 学习笔记 | Home Of CloudySky</title><meta name="keywords" content="D&amp;C"><meta name="author" content="CloudySky"><meta name="copyright" content="CloudySky"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="整体二分 学习笔记整体二分可以实现的功能相较于 CDQ 分治来说就比较局限了，它可以实现 动态区间第 $k$ 小。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="整体二分 学习笔记">
+<meta property="og:url" content="http://cloudyskyet.github.io/Home/Overall-Dichotomy/index.html">
+<meta property="og:site_name" content="Home Of CloudySky">
+<meta property="og:description" content="整体二分 学习笔记整体二分可以实现的功能相较于 CDQ 分治来说就比较局限了，它可以实现 动态区间第 $k$ 小。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://cloudyskyet.github.io/Home/img/2.jpg">
+<meta property="article:published_time" content="2021-12-29T08:33:04.000Z">
+<meta property="article:modified_time" content="2022-01-13T10:59:08.606Z">
+<meta property="article:author" content="CloudySky">
+<meta property="article:tag" content="D&amp;C">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cloudyskyet.github.io/Home/img/2.jpg"><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/242fc34aadd06c79efa2e3190cc45afc?d=mm&s=256"><link rel="canonical" href="http://cloudyskyet.github.io/Home/Overall-Dichotomy/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/Home/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/Home/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '整体二分 学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-01-13 18:59:08'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gravatar.loli.net/avatar/242fc34aadd06c79efa2e3190cc45afc?d=mm&amp;s=256" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/Home/archives/"><div class="headline">Articles</div><div class="length-num">52</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/Home/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/Home/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Home/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/Home/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/Home/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/Home/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Home/About/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/Home/Bin/"><span> Bin</span></a></div><div class="menus_item"><a class="site-page" href="/Home/friends/"><span> Friends</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/Home/img/2.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/Home/">Home Of CloudySky</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Home/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/Home/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/Home/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/Home/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Home/About/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/Home/Bin/"><span> Bin</span></a></div><div class="menus_item"><a class="site-page" href="/Home/friends/"><span> Friends</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">整体二分 学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-12-29T08:33:04.000Z" title="Created 2021-12-29 16:33:04">2021-12-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-01-13T10:59:08.606Z" title="Updated 2022-01-13 18:59:08">2022-01-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/Home/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="整体二分 学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="整体二分-学习笔记"><a href="#整体二分-学习笔记" class="headerlink" title="整体二分 学习笔记"></a>整体二分 学习笔记</h1><p>整体二分可以实现的功能相较于 CDQ 分治来说就比较局限了，它可以实现 <strong>动态区间第 $k$ 小</strong>。</p>
+<span id="more"></span>
+<p>思想大概是通过不断地二分值域，最终将每个操作归到一个点上，当前点即为查询的答案。</p>
+<p>实质上就是<strong>将 $n$ 个二分同时进行</strong>。</p>
+<p>对操作进行重排时使用两个临时数组进行辅助。</p>
+<p>具体实现：</p>
+<ul>
+<li><p>将所有的插入、修改和查询操作放在同一个结构体数组中。结构体维护一下几个信息：</p>
+<p>$tp$ - 当前操作的性质；修改为 0 ，查询为 1<br>$p, v, x$ - 如果当前操作为修改，$p$ 表示要修改的位置，$v$ 表示”变化”的值， $x$ 表示加（1）减（-1）。<br>$id, l, r, k$ - 如果当前操作为查询，$id$ 表示当前操作作为一个询问的编号，要找 $[l, r]$ 中第 $k$ 小。</p>
+</li>
+<li><p>插入和查询没什么可写的。修改转化为先删除再插入即可。</p>
+</li>
+<li><p>每次二分值域，<strong>依次（顺序很重要）</strong>枚举当前值域区间所有的操作，归为一下 4 类：</p>
+<ol>
+<li><p>修改，要修改的权值小于 $mid$ ，将要修改的位置在树状数组上打标记。同时将当前操作插入左区间临时数组。</p>
+</li>
+<li><p>修改，要修改的权值大于 $mid$ ，直接放在右区间临时数组即可。</p>
+</li>
+<li><p>查询，$k$ 值小于左区间所有<strong>已经放入</strong>的值 $s$，他要找的答案一定在左区间，直接插入左区间。</p>
+</li>
+<li><p>查询，$k$ 值大于左区间所有已经放入的值 $s$，答案一定在右区间，查询右区间 $k - s$ 值。</p>
+</li>
+</ol>
+</li>
+<li><p>对树状数组进行恢复，合并回主数组，进行下一次分治。</p>
+</li>
+</ul>
+<p>这段意思是，统计<strong>某次查询前</strong>左区间数的个数，然后进行类似二分的套路操作。</p>
+<pre><code>代码实现：
+</code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 整体二分 学习笔记</span></span><br><span class="line"><span class="comment">// Code By CloudySky</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="comment">// #define int long long</span></span><br><span class="line"><span class="keyword">namespace</span> IO  <span class="comment">// namespace IO</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> IO;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Maxn = <span class="number">2e5</span> + <span class="number">10</span>, inf = (<span class="number">1</span> &lt;&lt; <span class="number">30</span>);</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> BIT &#123;</span><br><span class="line"><span class="keyword">int</span> v[Maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span> <span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (; x &lt; Maxn; x += (x &amp; -x))</span><br><span class="line">    v[x] += val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ask</span> <span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> ans = <span class="number">0</span>)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (; x; x -= (x &amp; -x))</span><br><span class="line">    ans += v[x];</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line">&#125;  <span class="comment">// namespace BIT</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> BIT;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">  <span class="keyword">int</span> tp;           <span class="comment">// 用来标记操作类型</span></span><br><span class="line">  <span class="keyword">int</span> p, v, x;      <span class="comment">// 用来维护修改操作</span></span><br><span class="line">  <span class="keyword">int</span> id, l, r, k;  <span class="comment">// 用来维护查询操作</span></span><br><span class="line">&#125; q[Maxn &lt;&lt; <span class="number">1</span>], q1[Maxn &lt;&lt; <span class="number">1</span>], q2[Maxn &lt;&lt; <span class="number">1</span>];</span><br><span class="line"><span class="keyword">int</span> tot, tq, ans[Maxn], a[Maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span> <span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (l &gt; r || ql &gt; qr) <span class="keyword">return</span>;                 <span class="comment">// 判断不合法区间</span></span><br><span class="line">  <span class="keyword">if</span> (l == r) &#123;                                 <span class="comment">// 已经将范围缩至某一确定点</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = ql; i &lt;= qr; ++i)              <span class="comment">// 遍历所有操作</span></span><br><span class="line">        <span class="keyword">if</span> (q[i].tp)                            <span class="comment">// 判断是否为查询</span></span><br><span class="line">          ans[q[i].id] = l;                     <span class="comment">// 统计答案</span></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>, c1 = <span class="number">0</span>, c2 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = ql; i &lt;= qr; ++i) &#123;</span><br><span class="line">    <span class="keyword">if</span> (q[i].tp) &#123;</span><br><span class="line">      <span class="keyword">int</span> s = <span class="built_in">ask</span> (q[i].r) - <span class="built_in">ask</span> (q[i].l - <span class="number">1</span>);</span><br><span class="line">      <span class="keyword">if</span> (q[i].k &lt;= s)                          <span class="comment">// 类型 3</span></span><br><span class="line">        q1[++c1] = q[i];</span><br><span class="line">      <span class="keyword">else</span>                                      <span class="comment">// 类型 4</span></span><br><span class="line">        q[i].k -= s, q2[++c2] = q[i];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// 这里不要把 v 和 p 搞反</span></span><br><span class="line">      <span class="keyword">if</span> (q[i].v &lt;= mid)                        <span class="comment">// 类型 1</span></span><br><span class="line">        q1[++c1] = q[i], <span class="built_in">add</span> (q[i].p, q[i].x);</span><br><span class="line">      <span class="keyword">else</span> q2[++c2] = q[i];                     <span class="comment">// 类型 2</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= c1; ++i)                 <span class="comment">// 恢复现场</span></span><br><span class="line">    <span class="keyword">if</span> (!q1[i].tp)</span><br><span class="line">      <span class="built_in">add</span> (q1[i].p, -q1[i].x);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= c1; ++i)                 <span class="comment">// 合并数组</span></span><br><span class="line">    q[i + ql - <span class="number">1</span>] = q1[i];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= c2; ++i)</span><br><span class="line">    q[i + ql + c1 - <span class="number">1</span>] = q2[i];</span><br><span class="line">  <span class="built_in">solve</span> (l, mid, ql, ql + c1 - <span class="number">1</span>);              <span class="comment">// 进行下一步分治</span></span><br><span class="line">  <span class="built_in">solve</span> (mid + <span class="number">1</span>, r, ql + c1, qr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n = <span class="built_in">read</span> (), m = <span class="built_in">read</span> ();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    q[++tot] = (node) &#123;<span class="number">0</span>, i, a[i] = <span class="built_in">read</span> (), <span class="number">1</span>&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, l, r, k; i &lt;= m; ++i) &#123;</span><br><span class="line">    <span class="keyword">char</span> c; cin &gt;&gt; c;</span><br><span class="line">    <span class="keyword">if</span> (c == <span class="string">&#x27;Q&#x27;</span>) &#123;</span><br><span class="line">      l = <span class="built_in">read</span> (), r = <span class="built_in">read</span> (), k = <span class="built_in">read</span> ();</span><br><span class="line">      q[++tot] = (node) &#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, ++tq, l, r, k&#125;;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">int</span> x = <span class="built_in">read</span> (), y = <span class="built_in">read</span> ();</span><br><span class="line">      q[++tot] = (node) &#123;<span class="number">0</span>, x, a[x], <span class="number">-1</span>&#125;;</span><br><span class="line">      <span class="comment">// 这里及时修改 a 数组的值</span></span><br><span class="line">      q[++tot] = (node) &#123;<span class="number">0</span>, x, a[x] = y, <span class="number">1</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">solve</span> (-inf, inf, <span class="number">1</span>, tot);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= tq; ++i)</span><br><span class="line">    <span class="built_in">print</span> (ans[i]);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">CloudySky</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://cloudyskyet.github.io/Home/Overall-Dichotomy/">http://cloudyskyet.github.io/Home/Overall-Dichotomy/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/Home/tags/D-C/">D&amp;C</a></div><div class="post_share"><div class="social-share" data-image="/Home/img/2.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Home/Polynomial/"><img class="prev-cover" src="/Home/img/2.jpg" onerror="onerror=null;src='/Home/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">多项式 学习笔记</div></div></a></div><div class="next-post pull-right"><a href="/Home/CDQ/"><img class="next-cover" src="/Home/img/2.jpg" onerror="onerror=null;src='/Home/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">CDQ分治 学习笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/Home/CDQ/" title="CDQ分治 学习笔记"><img class="cover" src="/Home/img/2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-29</div><div class="title">CDQ分治 学习笔记</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gravatar.loli.net/avatar/242fc34aadd06c79efa2e3190cc45afc?d=mm&amp;s=256" onerror="this.onerror=null;this.src='/Home/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">CloudySky</div><div class="author-info__description">既然选择了远方，便只顾风雨兼程</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/Home/archives/"><div class="headline">Articles</div><div class="length-num">52</div></a></div><div class="card-info-data-item is-center"><a href="/Home/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a></div><div class="card-info-data-item is-center"><a href="/Home/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/CloudySkyET"><i class="fab fa-github"></i><span>Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/CloudySkyET" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">Maxim Wall</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E4%BA%8C%E5%88%86-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">整体二分 学习笔记</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Home/Polynomial/" title="多项式 学习笔记"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="多项式 学习笔记"/></a><div class="content"><a class="title" href="/Home/Polynomial/" title="多项式 学习笔记">多项式 学习笔记</a><time datetime="2022-01-09T12:28:30.000Z" title="Created 2022-01-09 20:28:30">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/Overall-Dichotomy/" title="整体二分 学习笔记"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="整体二分 学习笔记"/></a><div class="content"><a class="title" href="/Home/Overall-Dichotomy/" title="整体二分 学习笔记">整体二分 学习笔记</a><time datetime="2021-12-29T08:33:04.000Z" title="Created 2021-12-29 16:33:04">2021-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/CDQ/" title="CDQ分治 学习笔记"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="CDQ分治 学习笔记"/></a><div class="content"><a class="title" href="/Home/CDQ/" title="CDQ分治 学习笔记">CDQ分治 学习笔记</a><time datetime="2021-12-29T05:17:05.000Z" title="Created 2021-12-29 13:17:05">2021-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/solution-2021-12-26/" title="2021-12-26 模拟赛总结"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="2021-12-26 模拟赛总结"/></a><div class="content"><a class="title" href="/Home/solution-2021-12-26/" title="2021-12-26 模拟赛总结">2021-12-26 模拟赛总结</a><time datetime="2021-12-26T13:10:17.000Z" title="Created 2021-12-26 21:10:17">2021-12-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/p1972/" title="P1972 [SDOI2009]HH的项链"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="P1972 [SDOI2009]HH的项链"/></a><div class="content"><a class="title" href="/Home/p1972/" title="P1972 [SDOI2009]HH的项链">P1972 [SDOI2009]HH的项链</a><time datetime="2021-12-25T15:31:37.000Z" title="Created 2021-12-25 23:31:37">2021-12-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By CloudySky</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Home/js/utils.js"></script><script src="/Home/js/main.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

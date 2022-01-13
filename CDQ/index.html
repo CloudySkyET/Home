@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CDQ分治 学习笔记 | Home Of CloudySky</title><meta name="keywords" content="D&amp;C"><meta name="author" content="CloudySky"><meta name="copyright" content="CloudySky"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="CDQ 分治 学习笔记CDQ 分治是 OI 中一个比较常用的分治算法。模板的实现较为简单，重点在于领会思想。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CDQ分治 学习笔记">
+<meta property="og:url" content="http://cloudyskyet.github.io/Home/CDQ/index.html">
+<meta property="og:site_name" content="Home Of CloudySky">
+<meta property="og:description" content="CDQ 分治 学习笔记CDQ 分治是 OI 中一个比较常用的分治算法。模板的实现较为简单，重点在于领会思想。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://cloudyskyet.github.io/Home/img/2.jpg">
+<meta property="article:published_time" content="2021-12-29T05:17:05.000Z">
+<meta property="article:modified_time" content="2022-01-13T10:59:08.677Z">
+<meta property="article:author" content="CloudySky">
+<meta property="article:tag" content="D&amp;C">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cloudyskyet.github.io/Home/img/2.jpg"><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/242fc34aadd06c79efa2e3190cc45afc?d=mm&s=256"><link rel="canonical" href="http://cloudyskyet.github.io/Home/CDQ/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/Home/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/Home/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CDQ分治 学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-01-13 18:59:08'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gravatar.loli.net/avatar/242fc34aadd06c79efa2e3190cc45afc?d=mm&amp;s=256" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/Home/archives/"><div class="headline">Articles</div><div class="length-num">52</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/Home/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/Home/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Home/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/Home/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/Home/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/Home/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Home/About/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/Home/Bin/"><span> Bin</span></a></div><div class="menus_item"><a class="site-page" href="/Home/friends/"><span> Friends</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/Home/img/2.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/Home/">Home Of CloudySky</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Home/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/Home/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/Home/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/Home/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Home/About/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/Home/Bin/"><span> Bin</span></a></div><div class="menus_item"><a class="site-page" href="/Home/friends/"><span> Friends</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CDQ分治 学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-12-29T05:17:05.000Z" title="Created 2021-12-29 13:17:05">2021-12-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-01-13T10:59:08.677Z" title="Updated 2022-01-13 18:59:08">2022-01-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/Home/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="CDQ分治 学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="CDQ-分治-学习笔记"><a href="#CDQ-分治-学习笔记" class="headerlink" title="CDQ 分治 学习笔记"></a>CDQ 分治 学习笔记</h1><p>CDQ 分治是 OI 中一个比较常用的分治算法。模板的实现较为简单，重点在于领会思想。</p>
+<span id="more"></span>
+<h2 id="CDQ-分治用来解决点对三维偏序问题"><a href="#CDQ-分治用来解决点对三维偏序问题" class="headerlink" title="CDQ 分治用来解决点对三维偏序问题"></a>CDQ 分治用来解决点对三维偏序问题</h2><p>点对的三位偏序可以表示为</p>
+<p>有 $n$ 个元素，第 $i$ 个元素有 $a_i,b_i,c_i$ 三个属性，设 $f(i)$ 表示满足 $a_j \leq a_i$ 且 $b_j \leq b_i$ 且 $c_j \leq c_i$ 且 $j \ne i$ 的 $j$ 的数量。求 $f_{i}$ 。</p>
+<p>先假设没有相同的元素，具体实现：</p>
+<ul>
+<li>将整个数组按照 $a_i$ 排序，开始递归。</li>
+<li>将当前区间二分，左右两边<strong>分别</strong>按照 $b_i$ 排序。</li>
+</ul>
+<p>现在考虑左边的所有数字 $a_i$ 一定小于右边，这是在分治开始之前就已经确定好的。</p>
+<p>然后由于你在左右分别按照第二维排序了，所以第二维也分别是有序的。</p>
+<ul>
+<li><p>所以就可以在左右分别维护一个指针 $pl, pr$ 。</p>
+</li>
+<li><p>枚举 $pr \in[mid + 1, r]$ 。</p>
+</li>
+<li><p>跳 $pl\in[l, mid]$ 使 $b_{pl} &lt; b_{pr}$ 始终成立，同时将已经扫过的 $c_{pl}$ <strong>插入树状数组</strong>。</p>
+</li>
+<li><p>每次当 $pl$ 不能再跳时统计 $pr$ 贡献 $ans_{pr} += ask (c_{pr})$ ，即第三维也比当前数字小的数。</p>
+</li>
+<li>枚举 $i\in[l, pl]$ ，在树状数组上消除贡献。</li>
+</ul>
+<p>由于你的前两维已经确定了，所以只要第三维也比当前数小的话，就一定满足条件。</p>
+<p>由于以上整个过程都处于分治过程中，所以一定可以保证不重不漏。</p>
+<p>另外，如果要在递归之前排序的话，一定要建<strong>临时数组</strong>，否则递归回出错；</p>
+<p>也可以先递归，然后进行操作，最后将<strong>当前整段区间</strong>进行排序，以便<strong>父层</strong>使用，最后分治完再将序列<strong>排回原样</strong>。</p>
+<p>两种写法更推荐后者，排序没有过多的复杂度浪费。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3810">P3810 【模板】三维偏序（陌上花开）</a></p>
+<p>代码实现：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CDQ 分治 学习笔记</span></span><br><span class="line"><span class="comment">// Code By CloudySky</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="comment">// #define int long long</span></span><br><span class="line"><span class="keyword">namespace</span> IO  <span class="comment">// namespace IO</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> IO;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Maxn = <span class="number">2e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) x &amp; -x</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> v[Maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span> <span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (; x &lt;= Maxn; x += <span class="built_in">lowbit</span>(x)) </span><br><span class="line">    v[x] += val;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ask</span> <span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (; x; x -= <span class="built_in">lowbit</span> (x)) </span><br><span class="line">    ans += v[x];</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">  <span class="keyword">int</span> x, y, z, f;</span><br><span class="line">  <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node b) <span class="keyword">const</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (x != b.x) <span class="keyword">return</span> x &lt; b.x;</span><br><span class="line">    <span class="keyword">if</span> (y != b.y) <span class="keyword">return</span> y &lt; b.y;</span><br><span class="line">    <span class="keyword">if</span> (z != b.z) <span class="keyword">return</span> z &lt; b.z;</span><br><span class="line">    <span class="keyword">return</span> f &lt; b.f;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">bool</span> <span class="keyword">operator</span> == (<span class="keyword">const</span> node b) <span class="keyword">const</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (x != b.x) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (y != b.y) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (z != b.z) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125; a[Maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span> <span class="params">(node &amp;n, node &amp;m)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n.y != m.y) <span class="keyword">return</span> n.y &lt; m.y;</span><br><span class="line">  <span class="keyword">return</span> n.z &lt; m.z;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> d[Maxn], n, k;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span> <span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">  <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">  <span class="built_in">solve</span> (l, mid), <span class="built_in">solve</span> (mid + <span class="number">1</span>, r);</span><br><span class="line">  <span class="keyword">int</span> pos1 = l, pos2 = mid + <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (; pos2 &lt;= r; ++pos2) &#123;</span><br><span class="line">    <span class="keyword">while</span> (a[pos1].y &lt;= a[pos2].y &amp;&amp; pos1 &lt;= mid) &#123;</span><br><span class="line">      <span class="built_in">add</span> (a[pos1].z, <span class="number">1</span>), pos1 ++;</span><br><span class="line">    &#125;</span><br><span class="line">    a[pos2].f += <span class="built_in">ask</span> (a[pos2].z);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt; pos1; ++i) &#123;</span><br><span class="line">    <span class="built_in">add</span> (a[i].z, <span class="number">-1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">sort</span> (a + l, a + r + <span class="number">1</span>, cmp);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  n = <span class="built_in">read</span> (), k = <span class="built_in">read</span> ();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">    a[i] = (node) &#123;<span class="built_in">read</span> (), <span class="built_in">read</span> (), <span class="built_in">read</span> ()&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">sort</span> (a + <span class="number">1</span>, a + n + <span class="number">1</span>);</span><br><span class="line">  <span class="built_in">solve</span> (<span class="number">1</span>, n);</span><br><span class="line">  <span class="built_in">sort</span> (a + <span class="number">1</span>, a + n + <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">int</span> lst = n;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">1</span>; --i) &#123;</span><br><span class="line">    <span class="keyword">if</span> (a[i] == a[lst]) a[i].f = a[lst].f;</span><br><span class="line">    <span class="keyword">else</span> lst = i;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">    d[a[i].f] ++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">    <span class="built_in">print</span> (d[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">CloudySky</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://cloudyskyet.github.io/Home/CDQ/">http://cloudyskyet.github.io/Home/CDQ/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/Home/tags/D-C/">D&amp;C</a></div><div class="post_share"><div class="social-share" data-image="/Home/img/2.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Home/Overall-Dichotomy/"><img class="prev-cover" src="/Home/img/2.jpg" onerror="onerror=null;src='/Home/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">整体二分 学习笔记</div></div></a></div><div class="next-post pull-right"><a href="/Home/solution-2021-12-26/"><img class="next-cover" src="/Home/img/2.jpg" onerror="onerror=null;src='/Home/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">2021-12-26 模拟赛总结</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/Home/Overall-Dichotomy/" title="整体二分 学习笔记"><img class="cover" src="/Home/img/2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-29</div><div class="title">整体二分 学习笔记</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gravatar.loli.net/avatar/242fc34aadd06c79efa2e3190cc45afc?d=mm&amp;s=256" onerror="this.onerror=null;this.src='/Home/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">CloudySky</div><div class="author-info__description">既然选择了远方，便只顾风雨兼程</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/Home/archives/"><div class="headline">Articles</div><div class="length-num">52</div></a></div><div class="card-info-data-item is-center"><a href="/Home/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a></div><div class="card-info-data-item is-center"><a href="/Home/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/CloudySkyET"><i class="fab fa-github"></i><span>Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/CloudySkyET" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">Maxim Wall</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CDQ-%E5%88%86%E6%B2%BB-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">CDQ 分治 学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CDQ-%E5%88%86%E6%B2%BB%E7%94%A8%E6%9D%A5%E8%A7%A3%E5%86%B3%E7%82%B9%E5%AF%B9%E4%B8%89%E7%BB%B4%E5%81%8F%E5%BA%8F%E9%97%AE%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">CDQ 分治用来解决点对三维偏序问题</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Home/Polynomial/" title="多项式 学习笔记"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="多项式 学习笔记"/></a><div class="content"><a class="title" href="/Home/Polynomial/" title="多项式 学习笔记">多项式 学习笔记</a><time datetime="2022-01-09T12:28:30.000Z" title="Created 2022-01-09 20:28:30">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/Overall-Dichotomy/" title="整体二分 学习笔记"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="整体二分 学习笔记"/></a><div class="content"><a class="title" href="/Home/Overall-Dichotomy/" title="整体二分 学习笔记">整体二分 学习笔记</a><time datetime="2021-12-29T08:33:04.000Z" title="Created 2021-12-29 16:33:04">2021-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/CDQ/" title="CDQ分治 学习笔记"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="CDQ分治 学习笔记"/></a><div class="content"><a class="title" href="/Home/CDQ/" title="CDQ分治 学习笔记">CDQ分治 学习笔记</a><time datetime="2021-12-29T05:17:05.000Z" title="Created 2021-12-29 13:17:05">2021-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/solution-2021-12-26/" title="2021-12-26 模拟赛总结"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="2021-12-26 模拟赛总结"/></a><div class="content"><a class="title" href="/Home/solution-2021-12-26/" title="2021-12-26 模拟赛总结">2021-12-26 模拟赛总结</a><time datetime="2021-12-26T13:10:17.000Z" title="Created 2021-12-26 21:10:17">2021-12-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/p1972/" title="P1972 [SDOI2009]HH的项链"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="P1972 [SDOI2009]HH的项链"/></a><div class="content"><a class="title" href="/Home/p1972/" title="P1972 [SDOI2009]HH的项链">P1972 [SDOI2009]HH的项链</a><time datetime="2021-12-25T15:31:37.000Z" title="Created 2021-12-25 23:31:37">2021-12-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By CloudySky</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Home/js/utils.js"></script><script src="/Home/js/main.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>博客索引 &amp;&amp; 留言墙 | Home Of CloudySky</title><meta name="author" content="CloudySky"><meta name="copyright" content="CloudySky"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="上次更新时间：2022-01-13 博客索引 &amp;&amp; 留言墙我不认为我有 command-block 的实力，但仍希望可以带来更好的体验。 注：这里文章是按发布时间排序的，博客中按维护时间排序。 图论部分：小结：多数作于初三暑假集训初期，可以算较为全面，但多数质量不高。  最短路算法 学习笔记 浅略地写了三种最短路算法，和优缺点，并附上了代码。 题单中为老师要求的题目，解法都比较神奇">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客索引 &amp;&amp; 留言墙">
+<meta property="og:url" content="http://cloudyskyet.github.io/Home/BlogContent/index.html">
+<meta property="og:site_name" content="Home Of CloudySky">
+<meta property="og:description" content="上次更新时间：2022-01-13 博客索引 &amp;&amp; 留言墙我不认为我有 command-block 的实力，但仍希望可以带来更好的体验。 注：这里文章是按发布时间排序的，博客中按维护时间排序。 图论部分：小结：多数作于初三暑假集训初期，可以算较为全面，但多数质量不高。  最短路算法 学习笔记 浅略地写了三种最短路算法，和优缺点，并附上了代码。 题单中为老师要求的题目，解法都比较神奇">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://cloudyskyet.github.io/Home/img/2.jpg">
+<meta property="article:published_time" content="1900-01-03T05:10:13.000Z">
+<meta property="article:modified_time" content="2022-01-13T05:25:24.468Z">
+<meta property="article:author" content="CloudySky">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cloudyskyet.github.io/Home/img/2.jpg"><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/242fc34aadd06c79efa2e3190cc45afc?d=mm&s=256"><link rel="canonical" href="http://cloudyskyet.github.io/Home/BlogContent/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/Home/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/Home/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '博客索引 && 留言墙',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-01-13 13:25:24'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gravatar.loli.net/avatar/242fc34aadd06c79efa2e3190cc45afc?d=mm&amp;s=256" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/Home/archives/"><div class="headline">Articles</div><div class="length-num">52</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/Home/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/Home/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Home/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/Home/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/Home/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/Home/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Home/About/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/Home/Bin/"><span> Bin</span></a></div><div class="menus_item"><a class="site-page" href="/Home/friends/"><span> Friends</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/Home/img/2.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/Home/">Home Of CloudySky</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Home/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/Home/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/Home/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/Home/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Home/About/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/Home/Bin/"><span> Bin</span></a></div><div class="menus_item"><a class="site-page" href="/Home/friends/"><span> Friends</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">博客索引 &amp;&amp; 留言墙</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="1900-01-03T05:10:13.000Z" title="Created 1900-01-03 13:15:56">1900-01-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-01-13T05:25:24.468Z" title="Updated 2022-01-13 13:25:24">2022-01-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="博客索引 &amp;&amp; 留言墙"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>上次更新时间：2022-01-13</p>
+<h1 id="博客索引-amp-amp-留言墙"><a href="#博客索引-amp-amp-留言墙" class="headerlink" title="博客索引 &amp;&amp; 留言墙"></a>博客索引 &amp;&amp; 留言墙</h1><p>我不认为我有 command-block 的实力，但仍希望可以带来更好的体验。</p>
+<p>注：这里文章是按发布时间排序的，博客中按维护时间排序。</p>
+<h2 id="图论部分："><a href="#图论部分：" class="headerlink" title="图论部分："></a>图论部分：</h2><p>小结：多数作于初三暑假集训初期，可以算较为全面，但多数质量不高。</p>
+<ul>
+<li><a href="/Blog/Shortest-Path">最短路算法 学习笔记</a></li>
+<li>浅略地写了三种最短路算法，和优缺点，并附上了代码。</li>
+<li>题单中为老师要求的题目，解法都比较神奇，由于当时能力有限，所能提供的思路很少。</li>
+<li><a href="/Blog/MST">最小生成树 学习笔记</a></li>
+<li>简写了两种最小生成树算法的，并附上了代码。</li>
+<li>题单中为老师要求的题目，涉及了最小生成树算法 $Kruskal$ 的常见变形，由于当时能力有限，所能提供的思路很少。</li>
+<li><a href="/Blog/Euler-Path">欧拉路 学习笔记</a></li>
+<li>简介了关于欧拉路和欧拉回路的定义和简单判定，较大篇幅复制的课件。</li>
+<li><a href="/Blog/Tarjan/">$\color{red}{\text{Tarjan算法 学习笔记}}$</a></li>
+<li>简介了关于有向图强连通分量，无向图点双，边双的定义与等价描述，并附上了 tarjan 算法实现方法和有向图 tarjan 代码。</li>
+<li>在 2022 年初进行了维护，或许值得一看。</li>
+<li><a href="/Blog/Build-Graph/">玄学建图初步 学习笔记</a></li>
+<li>简介了两种常见的建图套路，并附了两道模板题，同样为老师要求的题。</li>
+<li><a href="/Blog/Bipartite-Graph/">二分图基础知识 学习笔记</a></li>
+<li>介绍了二分图的一些简单概念与性质与匈牙利二分图匹配算法。</li>
+<li><a href="/Blog/Topo/">拓扑排序 学习笔记</a></li>
+<li>介绍了拓扑排序的基础实现。</li>
+<li><a href="/Blog/Flow/">$\color{red}{\text{网络流及 Dinic,EK 学习笔记}}$</a></li>
+<li>介绍了网络流的基本知识和两种常用的网络流实现算法。</li>
+<li>或许值得一看</li>
+<li>但限于水平问题，只附了板子，对最精髓的建图方面只字未提。</li>
+</ul>
+<h2 id="字符串部分："><a href="#字符串部分：" class="headerlink" title="字符串部分："></a>字符串部分：</h2><ul>
+<li><a href="/Blog/String/">字符串基础 学习笔记</a></li>
+<li>只有一篇，成篇于暑假初期，介绍了几种字符串算法，涉及回文串，字符串匹配。</li>
+<li>进行过一定维护。</li>
+</ul>
+<h2 id="数据结构部分："><a href="#数据结构部分：" class="headerlink" title="数据结构部分："></a>数据结构部分：</h2><p>小结：可能写的比较零散，没有进行过专项。</p>
+<ul>
+<li><a href="/Blog/Tree-Trie/">字典树 学习笔记</a></li>
+<li>成篇于暑假初期。介绍了 $Trie$ 树的几种应用，涉及字符串，异或操作和平衡树。</li>
+<li><a href="/Blog/FHQ-Treap/">$\color{red}{\text{FHQ_Treap 学习笔记}}$</a></li>
+<li>介绍了 $FHQ_Treap$ 并附上了代码，有一定可读性。</li>
+<li><a href="/Blog/Segment-Tree/">$\color{red}{\text{线段树，可持久化权值线段树，树套树 学习笔记}}$</a></li>
+<li>较详细地介绍了线段树和常见变形，对基础要求低。</li>
+<li><a href="/Blog/p1972/">P1972 [SDOI2009]HH的项链</a></li>
+<li>可持久化线段树的一道例题。</li>
+</ul>
+<h2 id="数学部分："><a href="#数学部分：" class="headerlink" title="数学部分："></a>数学部分：</h2><p>小结：大部分是一些零碎的算法的学习笔记。多数作于高一刚开学时。</p>
+<ul>
+<li><a href="/Blog/Cantor">康托展开 学习笔记</a></li>
+<li>介绍了康托展开算法，附上了板子。</li>
+<li><a href="/Blog/exgcd-0">$\color{red}{\text{拓展欧几里得算法（exgcd） 学习笔记}}$</a></li>
+<li>较详细地介绍了扩展欧几里得算法。</li>
+<li><a href="/Blog/CRT/">中国剩余定理（CRT）及 Excrt 学习笔记</a></li>
+<li>介绍了中国剩余定理和扩展中国剩余定理算法，并附上了板子。</li>
+<li><a href="/Blog/Matrix/">$\color{red}{\text{矩阵 学习笔记}}$</a></li>
+<li>较系统地介绍了矩阵基础知识和应用，进行过多次维护。</li>
+<li><a href="/Blog/HOCE/">求解高次同余方程（离散对数） 学习笔记</a></li>
+<li>介绍了离散对数和 BSGS 算法的实现。</li>
+<li><a href="/Blog/Game-Theory/">博弈论初步基础知识 学习笔记</a></li>
+<li>介绍了博弈论基础知识。</li>
+<li><a href="/Blog/Combinatorial-Mathematics/">组合数学基础知识 学习笔记</a></li>
+<li>一个半路弃掉的坑。介绍了排列组合的一些性质。</li>
+<li><a href="/Blog/Number-Theory/">$\color{red}{\text{数论初步 学习笔记}}$</a></li>
+<li>介绍了数论初步知识，欧拉函数和莫比乌斯函数的性质和简单应用。关于约数方面还有待完善。</li>
+<li><a href="/Blog/Polynomial/">$\color{red}{\text{多项式 学习笔记}}$</a></li>
+<li>多项式基础知识，多项式<strong>半家桶</strong>。但写了的部分应该挺详细。</li>
+</ul>
+<h2 id="动态规划部分"><a href="#动态规划部分" class="headerlink" title="动态规划部分"></a>动态规划部分</h2><p>小结：高中之前动态规划一直特别弱，所以写的都是一些简单题的题解，加速理解。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://localhost:4000/Blog/Bags/">$\color{red}{\text{背包问题 学习笔记}}$</a></li>
+<li>少有的成系统的学习笔记，介绍了常见背包模板。</li>
+<li><a href="/Blog/p1868/">P1868 饥饿的奶牛</a></li>
+<li>一道简单的线性 DP</li>
+<li><a href="/Blog/p5020/">P5020 [NOIP2018 提高组] 货币系统</a></li>
+<li>一道简单的背包 DP</li>
+<li><a href="/Blog/p5322/">P5322 [BJOI2019]排兵布阵</a></li>
+<li>一道简单的线性 DP</li>
+<li><a href="/Blog/p3558/">P3558 [POI2013]BAJ-Bytecomputer</a></li>
+<li>一道简单的线性 DP</li>
+<li><a href="/Blog/p4302/">P4302 [SCOI2003]字符串折叠</a></li>
+<li>一道简单的区间 DP</li>
+</ul>
+<h2 id="分治部分："><a href="#分治部分：" class="headerlink" title="分治部分："></a>分治部分：</h2><p>小结：目前只有两篇，在 2021 年末成篇。</p>
+<ul>
+<li><a href="/Blog/CDQ/">CDQ分治 学习笔记</a></li>
+<li>简介了 $CDQ$ 分治算法，应用方面有待完善。</li>
+<li><a href="/Blog/Overall-Dichotomy/">$\color{red}{\text{整体二分 学习笔记}}$</a></li>
+<li>简介了整体二分算法，较为全面。</li>
+</ul>
+<h2 id="一些综合性题解或杂项（不再标注）"><a href="#一些综合性题解或杂项（不再标注）" class="headerlink" title="一些综合性题解或杂项（不再标注）"></a>一些综合性题解或杂项（不再标注）</h2><ul>
+<li><a href="/Blog/NOIP2021/">NOIP2021 游记及题解</a></li>
+<li>浅述我的 NOIP2021 学习（划水）经历\NOIP T1-T3 题解</li>
+<li><a href="/Blog/solution-2021-10-21/">2021-10-21 CSP 考前模拟赛题解</a></li>
+<li><a href="/Blog/solution-2021-12-12/">2021-12-12 模拟赛总结</a></li>
+<li><a href="/Blog/solution-2021-12-26/">2021-12-26 模拟赛总结</a></li>
+</ul>
+<h2 id="技术流？"><a href="#技术流？" class="headerlink" title="技术流？"></a>技术流？</h2><ul>
+<li><a href="/Blog/hexo/">Hexo 博客搭建教程</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">CloudySky</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://cloudyskyet.github.io/Home/BlogContent/">http://cloudyskyet.github.io/Home/BlogContent/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/Home/img/2.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/Home/cf620e/"><img class="prev-cover" src="/Home/img/2.jpg" onerror="onerror=null;src='/Home/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">CF620E New Year Tree</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gravatar.loli.net/avatar/242fc34aadd06c79efa2e3190cc45afc?d=mm&amp;s=256" onerror="this.onerror=null;this.src='/Home/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">CloudySky</div><div class="author-info__description">既然选择了远方，便只顾风雨兼程</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/Home/archives/"><div class="headline">Articles</div><div class="length-num">52</div></a></div><div class="card-info-data-item is-center"><a href="/Home/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a></div><div class="card-info-data-item is-center"><a href="/Home/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/CloudySkyET"><i class="fab fa-github"></i><span>Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/CloudySkyET" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">Maxim Wall</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E7%B4%A2%E5%BC%95-amp-amp-%E7%95%99%E8%A8%80%E5%A2%99"><span class="toc-number">1.</span> <span class="toc-text">博客索引 &amp;&amp; 留言墙</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E8%AE%BA%E9%83%A8%E5%88%86%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">图论部分：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">字符串部分：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%83%A8%E5%88%86%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">数据结构部分：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E9%83%A8%E5%88%86%EF%BC%9A"><span class="toc-number">1.4.</span> <span class="toc-text">数学部分：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E9%83%A8%E5%88%86"><span class="toc-number">1.5.</span> <span class="toc-text">动态规划部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%B2%BB%E9%83%A8%E5%88%86%EF%BC%9A"><span class="toc-number">1.6.</span> <span class="toc-text">分治部分：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E7%BB%BC%E5%90%88%E6%80%A7%E9%A2%98%E8%A7%A3%E6%88%96%E6%9D%82%E9%A1%B9%EF%BC%88%E4%B8%8D%E5%86%8D%E6%A0%87%E6%B3%A8%EF%BC%89"><span class="toc-number">1.7.</span> <span class="toc-text">一些综合性题解或杂项（不再标注）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E6%B5%81%EF%BC%9F"><span class="toc-number">1.8.</span> <span class="toc-text">技术流？</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Home/Polynomial/" title="多项式 学习笔记"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="多项式 学习笔记"/></a><div class="content"><a class="title" href="/Home/Polynomial/" title="多项式 学习笔记">多项式 学习笔记</a><time datetime="2022-01-09T12:28:30.000Z" title="Created 2022-01-09 20:28:30">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/Overall-Dichotomy/" title="整体二分 学习笔记"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="整体二分 学习笔记"/></a><div class="content"><a class="title" href="/Home/Overall-Dichotomy/" title="整体二分 学习笔记">整体二分 学习笔记</a><time datetime="2021-12-29T08:33:04.000Z" title="Created 2021-12-29 16:33:04">2021-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/CDQ/" title="CDQ分治 学习笔记"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="CDQ分治 学习笔记"/></a><div class="content"><a class="title" href="/Home/CDQ/" title="CDQ分治 学习笔记">CDQ分治 学习笔记</a><time datetime="2021-12-29T05:17:05.000Z" title="Created 2021-12-29 13:17:05">2021-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/solution-2021-12-26/" title="2021-12-26 模拟赛总结"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="2021-12-26 模拟赛总结"/></a><div class="content"><a class="title" href="/Home/solution-2021-12-26/" title="2021-12-26 模拟赛总结">2021-12-26 模拟赛总结</a><time datetime="2021-12-26T13:10:17.000Z" title="Created 2021-12-26 21:10:17">2021-12-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/p1972/" title="P1972 [SDOI2009]HH的项链"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="P1972 [SDOI2009]HH的项链"/></a><div class="content"><a class="title" href="/Home/p1972/" title="P1972 [SDOI2009]HH的项链">P1972 [SDOI2009]HH的项链</a><time datetime="2021-12-25T15:31:37.000Z" title="Created 2021-12-25 23:31:37">2021-12-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By CloudySky</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Home/js/utils.js"></script><script src="/Home/js/main.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

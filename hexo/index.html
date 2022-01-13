@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hexo 博客搭建教程 | Home Of CloudySky</title><meta name="keywords" content="life"><meta name="author" content="CloudySky"><meta name="copyright" content="CloudySky"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Hexo 博客搭建教程注：大部分为搬运过来的。仅适用于 Windows。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 博客搭建教程">
+<meta property="og:url" content="http://cloudyskyet.github.io/Home/hexo/index.html">
+<meta property="og:site_name" content="Home Of CloudySky">
+<meta property="og:description" content="Hexo 博客搭建教程注：大部分为搬运过来的。仅适用于 Windows。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://cloudyskyet.github.io/Home/img/2.jpg">
+<meta property="article:published_time" content="2021-12-11T08:35:49.000Z">
+<meta property="article:modified_time" content="2022-01-13T10:59:29.181Z">
+<meta property="article:author" content="CloudySky">
+<meta property="article:tag" content="life">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cloudyskyet.github.io/Home/img/2.jpg"><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/242fc34aadd06c79efa2e3190cc45afc?d=mm&s=256"><link rel="canonical" href="http://cloudyskyet.github.io/Home/hexo/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/Home/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/Home/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo 博客搭建教程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-01-13 18:59:29'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gravatar.loli.net/avatar/242fc34aadd06c79efa2e3190cc45afc?d=mm&amp;s=256" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/Home/archives/"><div class="headline">Articles</div><div class="length-num">52</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/Home/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/Home/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Home/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/Home/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/Home/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/Home/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Home/About/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/Home/Bin/"><span> Bin</span></a></div><div class="menus_item"><a class="site-page" href="/Home/friends/"><span> Friends</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/Home/img/2.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/Home/">Home Of CloudySky</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Home/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/Home/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/Home/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/Home/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Home/About/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/Home/Bin/"><span> Bin</span></a></div><div class="menus_item"><a class="site-page" href="/Home/friends/"><span> Friends</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Hexo 博客搭建教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-12-11T08:35:49.000Z" title="Created 2021-12-11 16:35:49">2021-12-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-01-13T10:59:29.181Z" title="Updated 2022-01-13 18:59:29">2022-01-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/Home/categories/%E6%9D%82%E9%A1%B9/">杂项</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Hexo 博客搭建教程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Hexo-博客搭建教程"><a href="#Hexo-博客搭建教程" class="headerlink" title="Hexo 博客搭建教程"></a>Hexo 博客搭建教程</h1><p>注：大部分为搬运过来的。仅适用于 Windows。</p>
+<span id="more"></span>
+<h2 id="1-更便捷的途径"><a href="#1-更便捷的途径" class="headerlink" title="-1. 更便捷的途径"></a>-1. 更便捷的途径</h2><p><a target="_blank" rel="noopener" href="https://github.com/renbaoshuo">renbaoshuo</a>/<strong><a target="_blank" rel="noopener" href="https://github.com/renbaoshuo/hexo-for-oiers">hexo-for-oiers</a></strong></p>
+<p>使用了 OI-wiki 同款主题，github 自动部署</p>
+<h2 id="0-前言"><a href="#0-前言" class="headerlink" title="0. 前言"></a>0. 前言</h2><p>如果你要自己搭博客，不建议<strong>网络直连</strong></p>
+<h2 id="1-安装-NodeJS-和-Git"><a href="#1-安装-NodeJS-和-Git" class="headerlink" title="1. 安装 NodeJS 和 Git"></a>1. 安装 NodeJS 和 Git</h2><p>注意文章时间，如果间隔过长建议<a target="_blank" rel="noopener" href="https://nodejs.org/en/">NodeJS官网</a>和<a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a>挑选。</p>
+<p>快捷链接：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://nodejs.org/dist/v16.13.1/node-v16.13.1-x64.msi">NodeJS 16.13.1 LTS 安装包</a>  </li>
+<li><a target="_blank" rel="noopener" href="https://github.com/git-for-windows/git/releases/download/v2.34.1.windows.1/Git-2.34.1-64-bit.exe">Git v2.34.1 安装包</a>  </li>
+</ul>
+<h2 id="2-输入指令。"><a href="#2-输入指令。" class="headerlink" title="2. 输入指令。"></a>2. 输入指令。</h2><p>首先新建一个文件夹，然后起好名字。用终端打开。<br>然后输入如下指令：<br><img src="/Blog/imgs/post_imgs/hexo-p1.png" alt=""><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init .</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><br>如果你的 hexo 指令报错了，那么你可能需要这样：<br><img src="/Blog/imgs/post_imgs/hexo-p2.png" alt=""><br>把对勾点上然后点应用。如果你是 Windows 10 直接搜索脚本也是可以找到的。<br>然后壳就差不多了。<br>你可以找到博客文件夹，找到<code>_config.yml</code>。<br>根据提示个性化修改里面的内容。（篇末附上我的配置文件）</p>
+<h2 id="3-把-hexo-的博客翻译并解释了一下。。"><a href="#3-把-hexo-的博客翻译并解释了一下。。" class="headerlink" title="3. 把 hexo 的博客翻译并解释了一下。。"></a>3. 把 hexo 的博客翻译并解释了一下。。</h2><h3 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h3><h4 id="创建一个新的文章"><a href="#创建一个新的文章" class="headerlink" title="创建一个新的文章"></a>创建一个新的文章</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<p>解释：如果你想写一篇名叫 <code>IAKIOI</code> 的博客，那么你可以这样:<br><img src="/Blog/imgs/post_imgs/hexo-p3.png" alt=""></p>
+<p>如果你想更改，你大概能在下面的位置找到它：</p>
+<p><img src="/Blog/imgs/post_imgs/hexo-p5.png" alt=""></p>
+<h4 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<p>解释：如果你想边写博客边预览，那么你就可以这样输入这条指令，然后<strong>保持终端打开</strong>。</p>
+<p>然后在浏览器中输入 <code>http://localhost:4000</code> 就可以看了。<br>在更改配置文件或组件后要重新启动，否则不需要，刷新页面即可。<br>补充：</p>
+<p>清除缓存，用于在更改一些配置文件或组件后防止引起混乱。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure></p>
+<p>如果你的博客刚刚按照上面的步骤搭好，那么他应该是这样的：<br><img src="/Blog/imgs/post_imgs/hexo-p4.png" alt=""></p>
+<p>后面这两条待会再说。</p>
+<h4 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h4 id="部署到站点"><a href="#部署到站点" class="headerlink" title="部署到站点"></a>部署到站点</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="4-配主题"><a href="#4-配主题" class="headerlink" title="4. 配主题"></a>4. 配主题</h2><p>这才是自己搭博客的精髓呀！<br>另外有些主题是不支持数学公式的。谨慎选择，这里推荐：<br><a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">NexT</a><br><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">butterfly</a><br><a target="_blank" rel="noopener" href="https://github.com/honjun/hexo-theme-sakura">sakura</a><br><a target="_blank" rel="noopener" href="https://github.com/Fechin/hexo-theme-diaspora">diaspora</a>（我在用的主题）<br>一般主题间切换有一定成本，不建议从某个主题，除默认，更换到其他主题建议新建文件夹重新来过。。<br>不过如果基建还在，新建文件夹会少很多步骤。这时就要运用人类智慧了。</p>
+<h2 id="5-生成并上传至-github-仓库"><a href="#5-生成并上传至-github-仓库" class="headerlink" title="5. 生成并上传至 github 仓库"></a>5. 生成并上传至 github 仓库</h2><h3 id="手把手教你-github。（这里如果之前用过可以选择性跳过）"><a href="#手把手教你-github。（这里如果之前用过可以选择性跳过）" class="headerlink" title="手把手教你 github。（这里如果之前用过可以选择性跳过）"></a>手把手教你 github。（这里如果之前用过可以选择性跳过）</h3><p>首先你登上<a target="_blank" rel="noopener" href="https://github.com/">github 官网</a>（前提是你运气够好等得上。。）<br><img src="/Blog/imgs/post_imgs/hexo-p6.png" alt=""><br>然后按照指引注册账号。<br><img src="/Blog/imgs/post_imgs/hexo-p7.png" alt=""><br>点击新建仓库：<br><img src="/Blog/imgs/post_imgs/hexo-p8.png" alt=""><br><img src="/Blog/imgs/post_imgs/hexo-p9.png" alt=""><br>这个仓库名要严格 <code>name.github.io</code> 回方便很多，这里报错是因为我已经有这个仓库了。<br>然后转入输入网址<code>https://github.com/settings/tokens/new</code>，转入个人密钥设置，Note 随意但必填，勾选 repo ：<br><img src="/Blog/imgs/post_imgs/hexo-p10.png" alt=""><br>点新建后<strong>记下来</strong><br>然后 github 方面就完成了。</p>
+<h3 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h3><p>找到博客文件夹，找到<code>_config.yml</code>。<br>在里面找到<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure><br>改成<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/&#x27;yourname&#x27;/&#x27;yourname&#x27;.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">&#x27;yourname&#x27;</span></span><br><span class="line">  <span class="attr">email:</span> <span class="string">&#x27;youremail&#x27;</span></span><br><span class="line">  <span class="attr">token:</span> <span class="string">&#x27;yourtoken&#x27;</span></span><br></pre></td></tr></table></figure></p>
+<p>加单引号部分为你个人信息。<br>然后终端跳转到文件夹，输入指令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><br><img src="/Blog/imgs/post_imgs/hexo-p11.png" alt=""><br>然后你就可以尝试用 <code>hexo g</code> 和 <code>hexo d</code> 或直接 <code>hexo g -d</code>。<br>第一次上传应该会提醒输入密码，这时，要输入密钥，即 token。</p>
+<p>应该差不多了吧。。。</p>
+<p>附（删减的部分为没有进行更改的部分，并非真正删除）：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hexo Configuration</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/configuration.html</span></span><br><span class="line"><span class="comment">## Source: https://github.com/hexojs/hexo/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Blog</span> <span class="string">of</span> <span class="string">CloudySky</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">永远相信美好的事情即将发生。</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">纵使世界万般残酷，总有温暖值得守护。</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">CloudySky</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as &#x27;http://yoursite.com/child&#x27; and root as &#x27;/child/&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://cloudyskyet.github.io/Blog</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:title/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;  &#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Home page setting</span></span><br><span class="line"><span class="comment"># path: Root path for your blogs index page. (default = &#x27;&#x27;)</span></span><br><span class="line"><span class="comment"># per_page: Posts displayed per page. (0 = disable pagination)</span></span><br><span class="line"><span class="comment"># order_by: Posts order. (Order by date descending by default)</span></span><br><span class="line"><span class="attr">index_generator:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">5</span></span><br><span class="line">  <span class="attr">order_by:</span> <span class="string">-date</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">pagination_dir:</span> <span class="string">page</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">diaspora</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/CloudySkyET/Blog.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">CloudySkyET</span></span><br><span class="line">  <span class="attr">email:</span> <span class="string">马赛克</span></span><br><span class="line">  <span class="attr">token:</span> <span class="string">马赛克</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 主题要求配置</span></span><br><span class="line"></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">CloudySky</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://cloudyskyet.github.io/Home/hexo/">http://cloudyskyet.github.io/Home/hexo/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/Home/tags/life/">life</a></div><div class="post_share"><div class="social-share" data-image="/Home/img/2.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Home/solution-2021-12-12/"><img class="prev-cover" src="/Home/img/2.jpg" onerror="onerror=null;src='/Home/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">2021-12-12 模拟赛总结</div></div></a></div><div class="next-post pull-right"><a href="/Home/Number-Theory/"><img class="next-cover" src="/Home/img/2.jpg" onerror="onerror=null;src='/Home/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">数论初步 学习笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/Home/NOIP2021/" title="NOIP2021 游记及题解"><img class="cover" src="/Home/img/2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-21</div><div class="title">NOIP2021 游记及题解</div></div></a></div><div><a href="/Home/schedule/" title="schedule"><img class="cover" src="/Home/img/2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-08</div><div class="title">schedule</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gravatar.loli.net/avatar/242fc34aadd06c79efa2e3190cc45afc?d=mm&amp;s=256" onerror="this.onerror=null;this.src='/Home/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">CloudySky</div><div class="author-info__description">既然选择了远方，便只顾风雨兼程</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/Home/archives/"><div class="headline">Articles</div><div class="length-num">52</div></a></div><div class="card-info-data-item is-center"><a href="/Home/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a></div><div class="card-info-data-item is-center"><a href="/Home/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/CloudySkyET"><i class="fab fa-github"></i><span>Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/CloudySkyET" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">Maxim Wall</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">Hexo 博客搭建教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%9B%B4%E4%BE%BF%E6%8D%B7%E7%9A%84%E9%80%94%E5%BE%84"><span class="toc-number">1.1.</span> <span class="toc-text">-1. 更便捷的途径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E5%89%8D%E8%A8%80"><span class="toc-number">1.2.</span> <span class="toc-text">0. 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85-NodeJS-%E5%92%8C-Git"><span class="toc-number">1.3.</span> <span class="toc-text">1. 安装 NodeJS 和 Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%BE%93%E5%85%A5%E6%8C%87%E4%BB%A4%E3%80%82"><span class="toc-number">1.4.</span> <span class="toc-text">2. 输入指令。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8A%8A-hexo-%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BF%BB%E8%AF%91%E5%B9%B6%E8%A7%A3%E9%87%8A%E4%BA%86%E4%B8%80%E4%B8%8B%E3%80%82%E3%80%82"><span class="toc-number">1.5.</span> <span class="toc-text">3. 把 hexo 的博客翻译并解释了一下。。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8"><span class="toc-number">1.5.1.</span> <span class="toc-text">快速入门</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E6%96%87%E7%AB%A0"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">创建一个新的文章</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88"><span class="toc-number">1.5.1.2.</span> <span class="toc-text">本地预览</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90"><span class="toc-number">1.5.1.3.</span> <span class="toc-text">生成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0%E7%AB%99%E7%82%B9"><span class="toc-number">1.5.1.4.</span> <span class="toc-text">部署到站点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%85%8D%E4%B8%BB%E9%A2%98"><span class="toc-number">1.6.</span> <span class="toc-text">4. 配主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%94%9F%E6%88%90%E5%B9%B6%E4%B8%8A%E4%BC%A0%E8%87%B3-github-%E4%BB%93%E5%BA%93"><span class="toc-number">1.7.</span> <span class="toc-text">5. 生成并上传至 github 仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0-github%E3%80%82%EF%BC%88%E8%BF%99%E9%87%8C%E5%A6%82%E6%9E%9C%E4%B9%8B%E5%89%8D%E7%94%A8%E8%BF%87%E5%8F%AF%E4%BB%A5%E9%80%89%E6%8B%A9%E6%80%A7%E8%B7%B3%E8%BF%87%EF%BC%89"><span class="toc-number">1.7.1.</span> <span class="toc-text">手把手教你 github。（这里如果之前用过可以选择性跳过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E9%85%8D%E7%BD%AE"><span class="toc-number">1.7.2.</span> <span class="toc-text">本地配置</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Home/Polynomial/" title="多项式 学习笔记"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="多项式 学习笔记"/></a><div class="content"><a class="title" href="/Home/Polynomial/" title="多项式 学习笔记">多项式 学习笔记</a><time datetime="2022-01-09T12:28:30.000Z" title="Created 2022-01-09 20:28:30">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/Overall-Dichotomy/" title="整体二分 学习笔记"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="整体二分 学习笔记"/></a><div class="content"><a class="title" href="/Home/Overall-Dichotomy/" title="整体二分 学习笔记">整体二分 学习笔记</a><time datetime="2021-12-29T08:33:04.000Z" title="Created 2021-12-29 16:33:04">2021-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/CDQ/" title="CDQ分治 学习笔记"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="CDQ分治 学习笔记"/></a><div class="content"><a class="title" href="/Home/CDQ/" title="CDQ分治 学习笔记">CDQ分治 学习笔记</a><time datetime="2021-12-29T05:17:05.000Z" title="Created 2021-12-29 13:17:05">2021-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/solution-2021-12-26/" title="2021-12-26 模拟赛总结"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="2021-12-26 模拟赛总结"/></a><div class="content"><a class="title" href="/Home/solution-2021-12-26/" title="2021-12-26 模拟赛总结">2021-12-26 模拟赛总结</a><time datetime="2021-12-26T13:10:17.000Z" title="Created 2021-12-26 21:10:17">2021-12-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/p1972/" title="P1972 [SDOI2009]HH的项链"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="P1972 [SDOI2009]HH的项链"/></a><div class="content"><a class="title" href="/Home/p1972/" title="P1972 [SDOI2009]HH的项链">P1972 [SDOI2009]HH的项链</a><time datetime="2021-12-25T15:31:37.000Z" title="Created 2021-12-25 23:31:37">2021-12-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By CloudySky</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Home/js/utils.js"></script><script src="/Home/js/main.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>博弈论初步基础知识 学习笔记 | Home Of CloudySky</title><meta name="keywords" content="Math"><meta name="author" content="CloudySky"><meta name="copyright" content="CloudySky"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="博弈论初步基础知识 学习笔记关于博弈论这个算法，可能是算法竞赛中最实际的算法吧。博弈论算法虽然定理较多，但体系还算较完整。博弈论的学习很简单，代码量也相对较小，就是看能不能想出来正确的构造法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博弈论初步基础知识 学习笔记">
+<meta property="og:url" content="http://cloudyskyet.github.io/Home/Game-Theory/index.html">
+<meta property="og:site_name" content="Home Of CloudySky">
+<meta property="og:description" content="博弈论初步基础知识 学习笔记关于博弈论这个算法，可能是算法竞赛中最实际的算法吧。博弈论算法虽然定理较多，但体系还算较完整。博弈论的学习很简单，代码量也相对较小，就是看能不能想出来正确的构造法。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://cloudyskyet.github.io/Home/img/2.jpg">
+<meta property="article:published_time" content="2021-09-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-01-12T07:18:46.595Z">
+<meta property="article:author" content="CloudySky">
+<meta property="article:tag" content="Math">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cloudyskyet.github.io/Home/img/2.jpg"><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/242fc34aadd06c79efa2e3190cc45afc?d=mm&s=256"><link rel="canonical" href="http://cloudyskyet.github.io/Home/Game-Theory/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/Home/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/Home/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '博弈论初步基础知识 学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-01-12 15:18:46'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gravatar.loli.net/avatar/242fc34aadd06c79efa2e3190cc45afc?d=mm&amp;s=256" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/Home/archives/"><div class="headline">Articles</div><div class="length-num">52</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/Home/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/Home/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Home/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/Home/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/Home/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/Home/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Home/About/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/Home/Bin/"><span> Bin</span></a></div><div class="menus_item"><a class="site-page" href="/Home/friends/"><span> Friends</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/Home/img/2.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/Home/">Home Of CloudySky</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Home/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/Home/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/Home/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/Home/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Home/About/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/Home/Bin/"><span> Bin</span></a></div><div class="menus_item"><a class="site-page" href="/Home/friends/"><span> Friends</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">博弈论初步基础知识 学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-09-21T16:00:00.000Z" title="Created 2021-09-22 00:00:00">2021-09-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-01-12T07:18:46.595Z" title="Updated 2022-01-12 15:18:46">2022-01-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/Home/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="博弈论初步基础知识 学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="博弈论初步基础知识-学习笔记"><a href="#博弈论初步基础知识-学习笔记" class="headerlink" title="博弈论初步基础知识 学习笔记"></a>博弈论初步基础知识 学习笔记</h1><p>关于博弈论这个算法，可能是算法竞赛中最实际的算法吧。博弈论算法虽然定理较多，但体系还算较完整。博弈论的学习很简单，代码量也相对较小，就是看能不能想出来正确的构造法。</p>
+<span id="more"></span>
+<h2 id="公平组合游戏"><a href="#公平组合游戏" class="headerlink" title="公平组合游戏"></a>公平组合游戏</h2><p>公平组合游戏，就像字面意思。既是回合制游戏，还得是公平的。说高大上一点，就是拥有状态集，终止状态集，状态转移边，可以在有限步数内结束的游戏。</p>
+<p>是不是感觉这个规则要求太苛刻了？有什么创造性吗？所以这个规则并不完全是博弈论要讨论的内容。</p>
+<h2 id="策梅洛定理"><a href="#策梅洛定理" class="headerlink" title="策梅洛定理"></a>策梅洛定理</h2><p>其表示在二人的有限游戏中，如果双方皆拥有完全的资讯，并且运气因素并不牵涉在游戏中，那先行或后行者当一必有一方有必胜/必不败的策略。  —百度百科</p>
+<p>这种游戏相对于公平组合游戏规则就活泛多了。比如常玩的五子棋，围棋就不是公平组合游戏，因为甲放的棋子乙不能动。但他们都在策梅洛定理的研究范内。</p>
+<p>博弈论的体系都是在这种游戏的基础上构建的。</p>
+<p>设先手必胜状态为 $N$ 状态，先手必败状态为 $P$ 状态。</p>
+<p>那么一个满足上述要求的游戏中，</p>
+<p>如果一个状态 <strong>能</strong> 转移到 $P$ 状态，那么它一定是 $N$ 状态。</p>
+<p>如果一个状态<strong>只能</strong>转移到 $N$ 状态，那么它一定是 $P$ 状态。<br>（上面一定要记准确了，不然 SG 函数会很难受）<br>所以对于任意状态集，都可以确定哪一方赢。</p>
+<p>需要用数学归纳思想感性证明。</p>
+<h2 id="巴什博弈"><a href="#巴什博弈" class="headerlink" title="巴什博弈"></a>巴什博弈</h2><p>有 n 个石子，两人轮流取，每次只能取 $[1,m]$ 个。最后取光者胜。</p>
+<p>一个简单的构造就是 $(m+1)|n$ 时，先手必败，否则先手必胜。</p>
+<p>这个应该挺好理解的。就是如果甲取 $k$ 个，则乙取 $m-k+1$ 个，这样始终可以保证不论甲取何值，乙都可以取且可以保证和一定。如果不能整除，那乙没有任何办法。</p>
+<h2 id="Nim-游戏"><a href="#Nim-游戏" class="headerlink" title="Nim 游戏"></a>Nim 游戏</h2><p>有 𝑛 堆石子，每堆有 $a_i$ 个。每次从一堆中取任意个，取完最后一个石子者赢。</p>
+<p>如果 $⊕ 𝑎_𝑖 = 0$ ，那么先手必败，否则先手必胜。</p>
+<p>是不是突然感觉就蒙了？这个是咋构造出来的？不管你是不是，我是。</p>
+<h2 id="sg-函数"><a href="#sg-函数" class="headerlink" title="sg 函数"></a>sg 函数</h2><p>先定义一个 $ygsg$ 函数：<br>$ygsg(x) = 1 (x\in N)$（这里的 N 是必胜态而不是数集 N ）<br>在根据上面的策梅洛定理，</p>
+<script type="math/tex; mode=display">ygsg(x) = \begin{cases}0 &\nexists x->y,ygsg(y)=0\\1 &\exists x->y,ygsg(y)=0\end{cases}</script><p>然后再定义 $sg(x) = mex\{sg(y)|x-&gt;y\}$ 这个函数又是什么意思呢？</p>
+<p>通俗理解一下，就是 sg 函数和他的状态转移边构成了一个 DAG，如果 sg(x) 这个状态可达的所有状态中，含有 P 状态，那么 $sg(x) &gt; 0$ 否则 $sg(x) = 0$，然后就得出了 $sg(x)&gt;0\leftrightarrow ygsg(x)=1\leftrightarrow x\in N$。然后就有 $sg(x,y) = sg(x) \oplus sg(y)$（具体为什么还是不太清楚）</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">CloudySky</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://cloudyskyet.github.io/Home/Game-Theory/">http://cloudyskyet.github.io/Home/Game-Theory/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/Home/tags/Math/">Math</a></div><div class="post_share"><div class="social-share" data-image="/Home/img/2.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Home/Combinatorial-Mathematics/"><img class="prev-cover" src="/Home/img/2.jpg" onerror="onerror=null;src='/Home/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">组合数学基础知识 学习笔记</div></div></a></div><div class="next-post pull-right"><a href="/Home/Flow/"><img class="next-cover" src="/Home/img/2.jpg" onerror="onerror=null;src='/Home/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">网络流及 Dinic,EK 学习笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/Home/CRT/" title="中国剩余定理（CRT）及 Excrt 学习笔记"><img class="cover" src="/Home/img/2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-12</div><div class="title">中国剩余定理（CRT）及 Excrt 学习笔记</div></div></a></div><div><a href="/Home/Cantor/" title="康托展开 学习笔记"><img class="cover" src="/Home/img/2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-12</div><div class="title">康托展开 学习笔记</div></div></a></div><div><a href="/Home/Combinatorial-Mathematics/" title="组合数学基础知识 学习笔记"><img class="cover" src="/Home/img/2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-24</div><div class="title">组合数学基础知识 学习笔记</div></div></a></div><div><a href="/Home/HOCE/" title="求解高次同余方程（离散对数） 学习笔记"><img class="cover" src="/Home/img/2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-14</div><div class="title">求解高次同余方程（离散对数） 学习笔记</div></div></a></div><div><a href="/Home/Matrix/" title="矩阵 学习笔记"><img class="cover" src="/Home/img/2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-07</div><div class="title">矩阵 学习笔记</div></div></a></div><div><a href="/Home/Number-Theory/" title="数论初步 学习笔记"><img class="cover" src="/Home/img/2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-08</div><div class="title">数论初步 学习笔记</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gravatar.loli.net/avatar/242fc34aadd06c79efa2e3190cc45afc?d=mm&amp;s=256" onerror="this.onerror=null;this.src='/Home/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">CloudySky</div><div class="author-info__description">既然选择了远方，便只顾风雨兼程</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/Home/archives/"><div class="headline">Articles</div><div class="length-num">52</div></a></div><div class="card-info-data-item is-center"><a href="/Home/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a></div><div class="card-info-data-item is-center"><a href="/Home/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/CloudySkyET"><i class="fab fa-github"></i><span>Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/CloudySkyET" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">Maxim Wall</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%88%9D%E6%AD%A5%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">博弈论初步基础知识 学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AC%E5%B9%B3%E7%BB%84%E5%90%88%E6%B8%B8%E6%88%8F"><span class="toc-number">1.1.</span> <span class="toc-text">公平组合游戏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%96%E6%A2%85%E6%B4%9B%E5%AE%9A%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">策梅洛定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%B4%E4%BB%80%E5%8D%9A%E5%BC%88"><span class="toc-number">1.3.</span> <span class="toc-text">巴什博弈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nim-%E6%B8%B8%E6%88%8F"><span class="toc-number">1.4.</span> <span class="toc-text">Nim 游戏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sg-%E5%87%BD%E6%95%B0"><span class="toc-number">1.5.</span> <span class="toc-text">sg 函数</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Home/Polynomial/" title="多项式 学习笔记"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="多项式 学习笔记"/></a><div class="content"><a class="title" href="/Home/Polynomial/" title="多项式 学习笔记">多项式 学习笔记</a><time datetime="2022-01-09T12:28:30.000Z" title="Created 2022-01-09 20:28:30">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/Overall-Dichotomy/" title="整体二分 学习笔记"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="整体二分 学习笔记"/></a><div class="content"><a class="title" href="/Home/Overall-Dichotomy/" title="整体二分 学习笔记">整体二分 学习笔记</a><time datetime="2021-12-29T08:33:04.000Z" title="Created 2021-12-29 16:33:04">2021-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/CDQ/" title="CDQ分治 学习笔记"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="CDQ分治 学习笔记"/></a><div class="content"><a class="title" href="/Home/CDQ/" title="CDQ分治 学习笔记">CDQ分治 学习笔记</a><time datetime="2021-12-29T05:17:05.000Z" title="Created 2021-12-29 13:17:05">2021-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/solution-2021-12-26/" title="2021-12-26 模拟赛总结"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="2021-12-26 模拟赛总结"/></a><div class="content"><a class="title" href="/Home/solution-2021-12-26/" title="2021-12-26 模拟赛总结">2021-12-26 模拟赛总结</a><time datetime="2021-12-26T13:10:17.000Z" title="Created 2021-12-26 21:10:17">2021-12-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Home/p1972/" title="P1972 [SDOI2009]HH的项链"><img src="/Home/img/2.jpg" onerror="this.onerror=null;this.src='/Home/img/404.jpg'" alt="P1972 [SDOI2009]HH的项链"/></a><div class="content"><a class="title" href="/Home/p1972/" title="P1972 [SDOI2009]HH的项链">P1972 [SDOI2009]HH的项链</a><time datetime="2021-12-25T15:31:37.000Z" title="Created 2021-12-25 23:31:37">2021-12-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By CloudySky</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Home/js/utils.js"></script><script src="/Home/js/main.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
