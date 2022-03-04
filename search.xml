@@ -50,10 +50,10 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 <p>这就是最基本的框架，运行 hexo 指令的前提。</p>
 <h2 id="2-配置框架依赖"><a href="#2-配置框架依赖" class="headerlink" title="2. 配置框架依赖"></a>2. 配置框架依赖</h2><p>首先新建一个文件夹，起好名字。用终端打开，输入如下指令：</p>
-<p><img src="/imgs/post_imgs/hexo-p1.png" alt=""></p>
+<p><img src="/Home/imgs/post_imgs/hexo-p1.png" alt=""></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init .</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
 <p>如果你的 hexo 指令报错了，那么你可能需要这样：</p>
-<p><img src="/imgs/post_imgs/hexo-p2.png" alt=""></p>
+<p><img src="/Home/imgs/post_imgs/hexo-p2.png" alt=""></p>
 <p>把对勾点上然后点应用。如果你是 Windows 10 直接搜索<code>脚本</code>也是可以找到的，壳就差不多了。</p>
 <p>你可以找到博客文件夹，找到<code>_config.yml</code>，根据提示个性化修改里面的内容。</p>
 <h2 id="3-配主题"><a href="#3-配主题" class="headerlink" title="3. 配主题"></a>3. 配主题</h2><p>这才是自己搭博客的精髓呀，这里推荐：</p>
@@ -69,14 +69,14 @@
 <p>然后在<code>_config.yml</code>中添加一下内容</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Markdown-it config</span></span><br><span class="line"><span class="comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span></span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">render:</span></span><br><span class="line">    <span class="attr">html:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">xhtmlOut:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">breaks:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">linkify:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">typographer:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">plugins:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&#x27;@neilsustc/markdown-it-katex&#x27;</span></span><br><span class="line">  <span class="attr">anchors:</span></span><br><span class="line">    <span class="attr">level:</span> <span class="number">2</span></span><br><span class="line">    <span class="attr">collisionSuffix:</span> <span class="string">&#x27;t&#x27;</span></span><br><span class="line">    <span class="attr">permalink:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">permalinkClass:</span> <span class="string">header-anchor</span></span><br><span class="line">    <span class="attr">permalinkSymbol:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
 <p>然后在主题的 <code>source</code> 文件夹里找到 <code>head.ejs</code> 例如默认主题就在这里：</p>
-<p><img src="/imgs/post_imgs/hexo-p12.png" alt=""></p>
+<p><img src="/Home/imgs/post_imgs/hexo-p12.png" alt=""></p>
 <p>然后在合适的位置（大概缩进一次后）放入这两行代码：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!-- KaTeX --&gt;</span><br><span class="line">&lt;link rel=<span class="string">&quot;preload&quot;</span> href=<span class="string">&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> as=<span class="string">&quot;style&quot;</span> onload=<span class="string">&quot;this.onload=null, this.rel=&#x27;stylesheet&#x27;&quot;</span>&gt;</span><br><span class="line">&lt;noscript&gt;&lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span>&gt;&lt;/noscript&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="5-一些正常使用时常用指令"><a href="#5-一些正常使用时常用指令" class="headerlink" title="5. 一些正常使用时常用指令"></a>5. 一些正常使用时常用指令</h2><h3 id="创建一个新的文章"><a href="#创建一个新的文章" class="headerlink" title="创建一个新的文章"></a>创建一个新的文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<p>解释：如果你想写一篇名叫 <code>IAKIOI</code> 的博客，那么你可以这样:<br><img src="/imgs/post_imgs/hexo-p3.png" alt=""></p>
+<p>解释：如果你想写一篇名叫 <code>IAKIOI</code> 的博客，那么你可以这样:<br><img src="/Home/imgs/post_imgs/hexo-p3.png" alt=""></p>
 <p>如果你想更改，你大概能在下面的位置找到它：</p>
-<p><img src="/imgs/post_imgs/hexo-p5.png" alt=""></p>
+<p><img src="/Home/imgs/post_imgs/hexo-p5.png" alt=""></p>
 <p>如果要删除的话直接删掉文件就行。</p>
 <h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
@@ -86,17 +86,17 @@
 <p>补充：</p>
 <p>清除缓存，用于在更改一些配置文件或组件后防止引起混乱。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure></p>
 <p>如果你的博客刚刚按照上面的步骤搭好，那么他应该是这样的：</p>
-<p><img src="/imgs/post_imgs/hexo-p4.png" alt=""></p>
+<p><img src="/Home/imgs/post_imgs/hexo-p4.png" alt=""></p>
 <h2 id="6-生成并上传至-github-仓库"><a href="#6-生成并上传至-github-仓库" class="headerlink" title="6. 生成并上传至 github 仓库"></a>6. 生成并上传至 github 仓库</h2><h3 id="手把手教你-github。（这里如果之前用过可以选择性跳过）"><a href="#手把手教你-github。（这里如果之前用过可以选择性跳过）" class="headerlink" title="手把手教你 github。（这里如果之前用过可以选择性跳过）"></a>手把手教你 github。（这里如果之前用过可以选择性跳过）</h3><p>首先你登上<a href="https://github.com/">github 官网</a>（前提是你运气够好等得上。。）</p>
-<p><img src="/imgs/post_imgs/hexo-p6.png" alt=""></p>
+<p><img src="/Home/imgs/post_imgs/hexo-p6.png" alt=""></p>
 <p>然后按照指引注册账号。</p>
-<p><img src="/imgs/post_imgs/hexo-p7.png" alt=""></p>
+<p><img src="/Home/imgs/post_imgs/hexo-p7.png" alt=""></p>
 <p>点击新建仓库：</p>
-<p><img src="/imgs/post_imgs/hexo-p8.png" alt=""></p>
-<p><img src="/imgs/post_imgs/hexo-p9.png" alt=""></p>
+<p><img src="/Home/imgs/post_imgs/hexo-p8.png" alt=""></p>
+<p><img src="/Home/imgs/post_imgs/hexo-p9.png" alt=""></p>
 <p>这个仓库名要严格 <code>name.github.io</code> 会方便很多，这里报错是因为我已经有这个仓库了。</p>
 <p>然后转入输入网址<code>https://github.com/settings/tokens/new</code>，转入个人密钥设置，Note 随意但必填，勾选 repo ：</p>
-<p><img src="/imgs/post_imgs/hexo-p10.png" alt=""></p>
+<p><img src="/Home/imgs/post_imgs/hexo-p10.png" alt=""></p>
 <p>点新建后<strong>记下来</strong></p>
 <p>然后 github 方面就完成了。</p>
 <h3 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h3><p>找到博客文件夹，找到<code>_config.yml</code>。</p>
@@ -106,7 +106,7 @@
 <p>加单引号部分为你个人信息。</p>
 <p>然后终端跳转到文件夹，输入指令：  </p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p><img src="/imgs/post_imgs/hexo-p11.png" alt=""></p>
+<p><img src="/Home/imgs/post_imgs/hexo-p11.png" alt=""></p>
 <p>然后你就可以尝试用 <code>hexo g</code> 和 <code>hexo d</code> 或直接 <code>hexo g -d</code>。</p>
 <p>第一次上传应该会提醒输入密码，这时，要输入密钥，即 token。</p>
 <p>应该差不多了吧。。。</p>
