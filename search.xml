@@ -1,40 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>关于</title>
-    <url>/Home/About/</url>
-    <content><![CDATA[<h1 id="关于我："><a href="#关于我：" class="headerlink" title="关于我："></a>关于我：</h1><p>永远的空想家。。。</p>
-<p>一个河北高一 OIer。虽说从初一就开始学 OI 了，但真正感觉自己在为之努力的奋斗生涯是从高一暑假开始的。</p>
-<p>洛谷号：<a href="https://www.luogu.com.cn/user/304572#?">_CloudySky_</a></p>
-<p>CF（菜死了）：<a href="https://codeforces.com/profile/_CloudySky_">_CloudySky_</a></p>
-<p>偶像名叫 <a href="https://www.luogu.com.cn/user/58705">command_block</a></p>
-<p>引用班主任的一段话：<br><img src="/Home/imgs/backgrounds/xct.png" alt=""></p>
-<h1 id="关于这个博客："><a href="#关于这个博客：" class="headerlink" title="关于这个博客："></a>关于这个博客：</h1><p>里面的大部分内容还是写给自己的，默认有一定基础（至于具体什么水平不清楚，因为是动态的）。不过也希望对你能有帮助。</p>
-<p>有一些是现学现写的，有些急于求成；也有一些是复习时写的，咕了好久忘差不多了…<br>当然也会有一些我认为写的不错的。对于前面两类会尽量去改。</p>
-<p>里面多少会有一些从其他博客里取过来的经，但最终目的是为了自己掌握。</p>
-<p>学习笔记一般格式为：</p>
-<p>简介 + 具体实现 + 代码实现</p>
-<p>题解一般格式为：</p>
-<p>题目大意 + 题目正解 + 题目思路 + 复杂度 + 代码</p>
-<p>大原则：简约优先<del>懒</del></p>
-<p>主站主题：<a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></p>
-<p>博客</p>
-<p>因为个人比较善变，所以用过博客换过很多主题，在这里像曾经用过的主题和现在在用的主题作者表示感谢：</p>
-<ul>
-<li><p>landspace</p>
-</li>
-<li><p><a href="https://github.com/renbaoshuo/hexo-theme-pure">Pure</a></p>
-</li>
-<li><a href="https://github.com/Hanlin-Dong/hexo-theme-adagio">Adagio</a></li>
-<li><a href="https://github.com/next-theme/hexo-theme-next">NexT</a></li>
-<li><a href="https://github.com/Fechin/hexo-theme-diaspora">Diaspora</a></li>
-<li><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></li>
-<li><a href="https://github.com/klugjo/hexo-theme-clean-blog">CleanBlog</a></li>
-</ul>
-<p>部分样式借鉴了 <a href="https://github.com/renbaoshuo/hexo-theme-pure">prue</a> By <a href="https://baoshuo.ren">baoshuo</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>博客搭建教程</title>
     <url>/Home/hexo/</url>
     <content><![CDATA[<span id="more"></span>
